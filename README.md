@@ -1,4 +1,4 @@
-# TravelPoint
+# Food&Feedus
 
 <h1 align="center">Hi 👋, I'm souvik karfa</h1>
 <h3 align="center">A passionate frontend developer from Kolkata</h3>
