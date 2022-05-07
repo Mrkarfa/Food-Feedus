@@ -1,0 +1,960 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="../image/favicons/favicon.ico" type="image/x-icon">
+    <link rel="stylesheet" href="https://unpkg.com/swiper@8/swiper-bundle.min.css" />
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body class="bg-yellow-50">
+    <!-- navbar and hero section -->
+    <div class="container mx-auto overflow-hidden">
+        <div class="relative w-full">
+            <nav class="fixed z-10 w-full bg-yellow-50 md:absolute">
+                <div class="container m-auto px-2 md:px-12 lg:px-7">
+                    <div class="flex flex-wrap items-center justify-between gap-6 py-3 md:gap-0 md:py-4">
+                        <div class="flex w-full justify-between px-6 md:px-0 lg:w-max">
+                            <a href="#" aria-label="logo" class="flex items-center space-x-2">
+                                <img src="../image/gallery/logo.svg" class="w-12" alt="tailus logo" width="144"
+                                    height="133" />
+                                <span class="text-2xl font-bold text-yellow-900">Food & <span
+                                        class="text-yellow-700">Feedus</span></span>
+                            </a>
+
+                            <button aria-label="humburger" id="hamburger" class="relative -mr-2 h-10 w-10 lg:hidden">
+                                <div aria-hidden="true" id="line"
+                                    class="transtion open inset-0 m-auto h-0.5 w-6 rounded bg-yellow-900 duration-300">
+                                </div>
+                                <div aria-hidden="true" id="line2"
+                                    class="transtion open inset-0 m-auto mt-2 h-0.5 w-6 rounded bg-yellow-900 duration-300">
+                                </div>
+                                <div aria-hidden="true" id="line3"
+                                    class="transtion open inset-0 m-auto mt-2 h-0.5 w-6 rounded bg-yellow-900 duration-300">
+                                </div>
+                            </button>
+                        </div>
+
+                        <div class="hidden w-full flex-wrap items-center justify-end space-y-6 rounded-xl bg-white p-6 lg:flex lg:w-7/12 lg:flex-nowrap lg:space-y-0 lg:bg-transparent lg:p-0"
+                            id="menu">
+                            <div class="text-gray-600 lg:pr-4">
+                                <ul
+                                    class="space-y-6 text-center text-sm font-medium tracking-wide lg:flex lg:space-y-0 lg:text-left">
+                                    <li>
+                                        <a href="#" class="block transition hover:text-yellow-700 md:px-4">
+                                            <span>Indian Thali</span>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="#" class="block transition hover:text-yellow-700 md:px-4">
+                                            <span>Wishlist</span>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="#" class="block transition hover:text-yellow-700 md:px-4">
+                                            <span>Cart</span>
+                                        </a>
+                                    </li>
+                                </ul>
+                            </div>
+
+                            <div
+                                class="flex w-full flex-col items-center justify-center space-y-2 border-yellow-200 text-center lg:inline-block lg:w-max lg:space-y-0 lg:border-l lg:text-left">
+                                <button type="button" title="Start buying"
+                                    class="w-full rounded-full py-3 px-6 text-center transition focus:bg-yellow-100 active:bg-yellow-200 md:w-max">
+                                    <span class="block text-sm font-semibold text-yellow-800"> Sign up </span>
+                                </button>
+                                <button type="button" title="Start buying"
+                                    class="w-full rounded-full bg-yellow-300 py-3 px-6 text-center transition hover:bg-yellow-100 focus:bg-yellow-300 active:bg-yellow-400 md:w-max">
+                                    <span class="block text-sm font-semibold text-yellow-900"> Login </span>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </nav>
+            <div class="relative bg-yellow-50">
+                <div class="container m-auto px-6 pt-32 md:px-12 lg:px-7 lg:pt-[4.8rem]">
+                    <div class="flex flex-wrap items-center px-2 md:px-0">
+                        <div class="relative lg:w-6/12 lg:py-24 xl:py-32">
+                            <h1 class="text-4xl font-bold text-yellow-900 md:text-5xl lg:w-10/12">Your favorite dishes,
+                                right at your doorstep</h1>
+                            <form action="" class="mt-12 w-full">
+                                <div
+                                    class="relative flex rounded-full border border-yellow-200 bg-white p-1 shadow-md md:p-2">
+                                    <select class="hidden rounded-full bg-transparent p-3 md:block md:p-4" name="domain"
+                                        id="domain">
+                                        <option value="design">Chainese</option>
+                                        <option value="development">Thai</option>
+                                        <option value="marketing">Continental</option>
+                                        <option value="marketing">Indian</option>
+                                        <option value="marketing">Fastfood</option>
+                                        <option value="marketing">Our special</option>
+                                    </select>
+                                    <input placeholder="Your favorite food"
+                                        class="w-full rounded-full border p-4 hover:border-yellow-300 focus:outline-none"
+                                        type="text" />
+                                    <button type="button" title="Start buying"
+                                        class="ml-auto rounded-full bg-gradient-to-b from-yellow-200 to-yellow-300 py-3 px-6 text-center transition hover:to-red-300 focus:from-red-400 active:from-yellow-400 md:px-12">
+                                        <span class="hidden font-semibold text-yellow-900 md:block"> Search </span>
+                                        <svg xmlns="http://www.w3.org/2000/svg"
+                                            class="mx-auto w-5 text-yellow-900 md:hidden" fill="currentColor"
+                                            class="bi bi-search" viewBox="0 0 16 16">
+                                            <path
+                                                d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001c.03.04.062.078.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1.007 1.007 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0z" />
+                                        </svg>
+                                    </button>
+                                </div>
+                            </form>
+                            <p class="mt-8 mb-8 text-center text-sm text-gray-700 lg:mb-0 lg:w-10/12 lg:text-left">Lorem
+                                ipsum dolor sit amet consectetur adipisicing elit. Eos, aspernatur. <a href="#"
+                                    class="text-yellow-700">Click here</a> to get your first order at your doorstep.
+                                Enjoy
+                                your food and don't forget to give the feedback.</p>
+                        </div>
+                        <div class="ml-auto -mb-24 lg:-mb-56 lg:w-6/12">
+                            <img src="../image/gallery/hero-header.png" class="relative" alt="Food-Image" loading="lazy"
+                                width="4500" height="4500" />
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- food card section -->
+    <div class="overflow-hidden bg-yellow-50 py-14">
+        <div class="container m-auto space-y-8 px-6 md:px-12 lg:px-20">
+            <div class="mt-16 grid gap-8 sm:grid-cols-2 md:-mx-8 lg:grid-cols-4">
+                <div class="group relative">
+                    <div aria-hidden="true"
+                        class="absolute inset-0 rounded-xl bg-yellow-50 transition duration-300 group-hover:scale-105 group-hover:bg-yellow-900 lg:group-hover:scale-110">
+                    </div>
+                    <div class="relative space-y-12 p-2">
+                        <div class="relative">
+                            <img src="../image/gallery/discount-item-1.png" class="h-full w-full rounded-md transition"
+                                width="512" height="512" alt="salad" />
+                            <div
+                                class="absolute bottom-0 rounded-r-xl rounded-b-none bg-yellow-500 p-6 text-center text-xl font-extrabold text-white">
+                                15% 0ff</div>
+                        </div>
+                        <div class="space-y-4">
+                            <h4 class="text-2xl font-bold text-gray-800 transition group-hover:text-white">Flat Hill
+                                Slingback</h4>
+                            <p class="text-gray-600 group-hover:text-yellow-200">Quae accusantium, laudantium recusandae
+                                tenetur fugiat non cum doloribus aperiam voluptates nostrum.</p>
+                            <p>
+                                <span class="rounded-full bg-red-50 p-2 font-bold text-red-400">6 Days Remaining</span>
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <div class="group relative">
+                    <div aria-hidden="true"
+                        class="absolute inset-0 rounded-xl bg-yellow-50 transition duration-300 group-hover:scale-105 group-hover:bg-yellow-900 lg:group-hover:scale-110">
+                    </div>
+                    <div class="relative space-y-12 p-2">
+                        <div class="relative">
+                            <img src="../image/gallery/discount-item-2.png" class="h-full w-full rounded-md transition"
+                                width="512" height="512" alt="salad" />
+                            <div
+                                class="absolute bottom-0 rounded-r-xl rounded-b-none bg-yellow-500 p-6 text-center text-xl font-extrabold text-white">
+                                10% 0ff</div>
+                        </div>
+                        <div class="space-y-4">
+                            <h4 class="text-2xl font-bold text-gray-800 transition group-hover:text-white">Ocean Blue
+                                Ring
+                            </h4>
+                            <p class="text-gray-600 group-hover:text-yellow-200">Quae accusantium, laudantium recusandae
+                                tenetur fugiat non cum doloribus aperiam voluptates nostrum.</p>
+                            <p>
+                                <span class="rounded-full bg-red-50 p-2 font-bold text-red-400">6 Days Remaining</span>
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <div class="group relative">
+                    <div aria-hidden="true"
+                        class="absolute inset-0 rounded-xl bg-yellow-50 transition duration-300 group-hover:scale-105 group-hover:bg-yellow-900 lg:group-hover:scale-110">
+                    </div>
+                    <div class="relative space-y-12 p-2">
+                        <div class="relative">
+                            <img src="../image/gallery/discount-item-3.png" class="h-full w-full rounded-md transition"
+                                width="512" height="512" alt="salad" />
+                            <div
+                                class="absolute bottom-0 rounded-r-xl rounded-b-none bg-yellow-500 p-6 text-center text-xl font-extrabold text-white">
+                                15% 0ff</div>
+                        </div>
+                        <div class="space-y-4">
+                            <h4 class="text-2xl font-bold text-gray-800 transition group-hover:text-white">Lorem, ipsum
+                                dolor.</h4>
+                            <p class="text-gray-600 group-hover:text-yellow-200">Quae accusantium, laudantium recusandae
+                                tenetur fugiat non cum doloribus aperiam voluptates nostrum.</p>
+                            <p>
+                                <span class="rounded-full bg-red-50 p-2 font-bold text-red-400">6 Days Remaining</span>
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <div class="group relative">
+                    <div aria-hidden="true"
+                        class="absolute inset-0 rounded-xl bg-yellow-50 transition duration-300 group-hover:scale-105 group-hover:bg-yellow-900 lg:group-hover:scale-110">
+                    </div>
+                    <div class="relative space-y-12 p-2">
+                        <div class="relative">
+                            <img src="../image/gallery/discount-item-4.png" class="h-full w-full rounded-md transition"
+                                width="512" height="512" alt="salad" />
+                            <div
+                                class="absolute bottom-0 rounded-r-xl rounded-b-none bg-yellow-500 p-6 text-center text-xl font-extrabold text-white">
+                                16% 0ff</div>
+                        </div>
+                        <div class="space-y-4">
+                            <h4 class="text-2xl font-bold text-gray-800 transition group-hover:text-white">Lorem, ipsum
+                                dolor.</h4>
+                            <p class="text-gray-600 group-hover:text-yellow-200">Quae accusantium, laudantium recusandae
+                                tenetur fugiat non cum doloribus aperiam voluptates nostrum.</p>
+                            <p>
+                                <span class="rounded-full bg-red-50 p-2 font-bold text-red-400">6 Days Remaining</span>
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- statistic section -->
+    <section class="body-font container mx-auto overflow-hidden bg-yellow-50">
+        <div class="container mx-auto px-5 py-14 lg:w-4/5">
+            <div class="mb-16 flex w-full flex-col text-center">
+                <h1 class="title-font text-5xl font-bold text-orange-500">How Does it Work</h1>
+            </div>
+            <div class="-m-4 mx-auto flex flex-wrap overflow-hidden text-center">
+                <div
+                    class="w-full rounded-xl p-4 transition duration-300 hover:scale-105 sm:w-1/2 md:w-1/2 lg:w-1/4 lg:hover:scale-110">
+                    <div class="rounded-lg px-4 py-6">
+                        <img src="../image/gallery/location.png" alt="png-file" class="mb-3 inline-block" />
+                        <h2 class="title-font mb-2 text-2xl font-medium text-orange-500">Select location</h2>
+                        <p class="text-center text-gray-400">Choose the location where your food will be delivered.</p>
+                    </div>
+                </div>
+                <div
+                    class="w-full rounded-xl p-4 transition duration-300 hover:scale-105 sm:w-1/2 md:w-1/2 lg:w-1/4 lg:hover:scale-110">
+                    <div class="rounded-lg px-4 py-6">
+                        <img src="../image/gallery/order.png" alt="png-file" class="mb-3 inline-block" />
+                        <h2 class="title-font mb-2 text-2xl font-medium text-orange-500">Choose order</h2>
+                        <p class="text-center text-gray-400">Check over hundreds of menus to pick your favourite food
+                        </p>
+                    </div>
+                </div>
+                <div
+                    class="w-full rounded-xl p-4 transition duration-300 hover:scale-105 sm:w-1/2 md:w-1/2 lg:w-1/4 lg:hover:scale-110">
+                    <div class="rounded-lg px-4 py-6">
+                        <img src="../image/gallery/pay.png" alt="png-file" class="mb-3 inline-block" />
+                        <h2 class="title-font mb-2 text-2xl font-medium text-orange-500">Pay advanced</h2>
+                        <p class="text-center text-gray-400">It's quick, safe, and simple. Select several methods of
+                            payment
+                        </p>
+                    </div>
+                </div>
+                <div
+                    class="w-full rounded-xl p-4 transition duration-300 hover:scale-105 sm:w-1/2 md:w-1/2 lg:w-1/4 lg:hover:scale-110">
+                    <div class="rounded-lg px-4 py-6">
+                        <img src="../image/gallery/meals.png" alt="donut png" class="mb-3 inline-block" />
+                        <h2 class="title-font mb-2 text-2xl font-medium text-orange-500">Enjoy meals</h2>
+                        <p class="text-center text-gray-400">Food is made and delivered directly to your home.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- courasal section -->
+    <div class="container mx-auto bg-yellow-50 py-14">
+        <div class="mb-16 flex w-full flex-col text-center">
+            <h1 class="title-font text-5xl font-bold text-orange-500">Popular Items</h1>
+        </div>
+        <div class="swiper p-8">
+            <!-- Additional required wrapper -->
+            <div class="swiper-wrapper">
+                <!-- Slides -->
+                <div class="swiper-slide mx-auto flex flex-row gap-4">
+                    <div class="card w-96 space-y-4 bg-yellow-50">
+                        <figure class="px-10 pt-10">
+                            <img src="../image/gallery/cheese-burger.png" alt="Shoes" class="rounded-xl" />
+                        </figure>
+                        <div class="card-body items-center space-y-2 text-center">
+                            <h2 class="card-title">Cheese Burger</h2>
+                            <p>If a dog chews shoes whose shoes does he choose?</p>
+                            <div class="card-actions">
+                                <button class="btn btn-warning">Order Now</button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="card hidden w-96 space-y-4 bg-yellow-50 md:block">
+                        <figure class="px-10 pt-10">
+                            <img src="../image/gallery/toffes-cake.png" alt="Shoes" class="rounded-xl" />
+                        </figure>
+                        <div class="card-body items-center space-y-2 text-center">
+                            <h2 class="card-title">Toffe's Cake</h2>
+                            <p>If a dog chews shoes whose shoes does he choose?</p>
+                            <div class="card-actions">
+                                <button class="btn btn-warning">Order Now</button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="card hidden w-96 space-y-4 bg-yellow-50 md:block">
+                        <figure class="px-10 pt-10">
+                            <img src="../image/gallery/dancake.png" alt="Shoes" class="rounded-xl" />
+                        </figure>
+                        <div class="card-body items-center space-y-2 text-center">
+                            <h2 class="card-title">Dancake</h2>
+                            <p>If a dog chews shoes whose shoes does he choose?</p>
+                            <div class="card-actions">
+                                <button class="btn btn-warning">Order Now</button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="card hidden w-96 space-y-4 bg-yellow-50 lg:block">
+                        <figure class="px-10 pt-10">
+                            <img src="../image/gallery/crispy-sandwitch.png" alt="Shoes" class="rounded-xl" />
+                        </figure>
+                        <div class="card-body items-center space-y-2 text-center">
+                            <h2 class="card-title">Crispy Sandwitch</h2>
+                            <p>If a dog chews shoes whose shoes does he choose?</p>
+                            <div class="card-actions">
+                                <button class="btn btn-warning">Order Now</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="swiper-slide mx-auto flex flex-row gap-4">
+                    <div class="card w-96 space-y-4 bg-yellow-50">
+                        <figure class="px-10 pt-10">
+                            <img src="../image/gallery/thai-soup.png" alt="Shoes" class="rounded-xl" />
+                        </figure>
+                        <div class="card-body items-center space-y-2 text-center">
+                            <h2 class="card-title">Thai Soup</h2>
+                            <p>If a dog chews shoes whose shoes does he choose?</p>
+                            <div class="card-actions">
+                                <button class="btn btn-warning">Order Now</button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="card hidden w-96 space-y-4 bg-yellow-50 md:block">
+                        <figure class="px-10 pt-10">
+                            <img src="../image/gallery/cheese-burger.png" alt="Shoes" class="rounded-xl" />
+                        </figure>
+                        <div class="card-body items-center space-y-2 text-center">
+                            <h2 class="card-title">Cheese Burger</h2>
+                            <p>If a dog chews shoes whose shoes does he choose?</p>
+                            <div class="card-actions">
+                                <button class="btn btn-warning">Order Now</button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="card hidden w-96 space-y-4 bg-yellow-50 md:block">
+                        <figure class="px-10 pt-10">
+                            <img src="../image/gallery/toffes-cake.png" alt="Shoes" class="rounded-xl" />
+                        </figure>
+                        <div class="card-body items-center space-y-2 text-center">
+                            <h2 class="card-title">Toffe's Cake</h2>
+                            <p>If a dog chews shoes whose shoes does he choose?</p>
+                            <div class="card-actions">
+                                <button class="btn btn-warning">Order Now</button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="card hidden w-96 space-y-4 bg-yellow-50 lg:block">
+                        <figure class="px-10 pt-10">
+                            <img src="../image/gallery/dancake.png" alt="Shoes" class="rounded-xl" />
+                        </figure>
+                        <div class="card-body items-center space-y-2 text-center">
+                            <h2 class="card-title">Dancake</h2>
+                            <p>If a dog chews shoes whose shoes does he choose?</p>
+                            <div class="card-actions">
+                                <button class="btn btn-warning">Order Now</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- If we need pagination -->
+            <!-- <div class="swiper-pagination"></div> -->
+
+            <!-- If we need navigation buttons -->
+            <div class="swiper-button-prev pr-6 font-extrabold text-orange-500"></div>
+            <div class="swiper-button-next pl-6 font-extrabold text-orange-500"></div>
+
+            <!-- If we need scrollbar -->
+            <!-- <div class="swiper-scrollbar"></div> -->
+        </div>
+    </div>
+    <!-- Slider main container -->
+    <!-- featured resturent -->
+    <section class="container mx-auto bg-yellow-50">
+        <div class="mb-16 flex w-full flex-col text-center">
+            <h1 class="title-font text-5xl font-bold text-orange-500">Featured Restaurants</h1>
+        </div>
+        <div class="mt-16 grid gap-8 p-8 sm:grid-cols-2 md:-mx-8 lg:grid-cols-4">
+            <div class="relative">
+                <img src="../image/gallery/food-world.png" alt="food-world" class="rounded-2xl" />
+                <div class="absolute top-4 left-4 space-x-2">
+                    <span class="rounded-md bg-orange-600 p-2 font-extrabold text-white">20% Off</span>
+                    <span class="rounded-md bg-yellow-500 p-2 font-extrabold text-white">Fast</span>
+                </div>
+                <div class="my-4 flex flex-row items-center gap-x-4">
+                    <div class="flex">
+                        <img src="../image/gallery/food-world-logo.png" alt="logo" />
+                    </div>
+                    <div class="flex flex-col">
+                        <h3 class="text-lg font-extrabold">Food World</h3>
+                        <p class="text-lg font-bold text-yellow-500">46</p>
+                    </div>
+                </div>
+                <div class="">
+                    <p class="w-fit rounded-xl bg-orange-100 p-2 font-bold text-orange-700">Opens Tomorrow</p>
+                </div>
+            </div>
+
+            <div class="relative">
+                <img src="../image/gallery/pizza-hub.png" alt="food-world" class="rounded-2xl" />
+                <div class="absolute top-4 left-4 space-x-2">
+                    <span class="rounded-md bg-orange-600 p-2 font-extrabold text-white">10% Off</span>
+                    <span class="rounded-md bg-yellow-500 p-2 font-extrabold text-white">Fast</span>
+                </div>
+                <div class="my-4 flex flex-row items-center gap-x-4">
+                    <div class="flex">
+                        <img src="../image/gallery/pizzahub-logo.png" alt="logo" />
+                    </div>
+                    <div class="flex flex-col">
+                        <h3 class="text-lg font-extrabold">Pizza hub</h3>
+                        <p class="text-lg font-bold text-yellow-500">40</p>
+                    </div>
+                </div>
+                <div class="">
+                    <p class="w-fit rounded-xl bg-orange-100 p-2 font-bold text-orange-700">Opens Tomorrow</p>
+                </div>
+            </div>
+
+            <div class="relative">
+                <img src="../image/gallery/donuts-hut.png" alt="food-world" class="rounded-2xl" />
+                <div class="absolute top-4 left-4 space-x-2">
+                    <span class="rounded-md bg-orange-600 p-2 font-extrabold text-white">15% Off</span>
+                    <span class="rounded-md bg-yellow-500 p-2 font-extrabold text-white">Fast</span>
+                </div>
+                <div class="my-4 flex flex-row items-center gap-x-4">
+                    <div class="flex">
+                        <img src="../image/gallery/donut-hut-logo.png" alt="logo" />
+                    </div>
+                    <div class="flex flex-col">
+                        <h3 class="text-lg font-extrabold">Donuts hut</h3>
+                        <p class="text-lg font-bold text-yellow-500">46</p>
+                    </div>
+                </div>
+                <div class="">
+                    <p class="w-fit rounded-xl bg-green-100 p-2 font-bold text-green-700">Open Now</p>
+                </div>
+            </div>
+
+            <div class="relative">
+                <img src="../image/gallery/donuthut.png" alt="food-world" class="rounded-2xl" />
+                <div class="absolute top-4 left-4 space-x-2">
+                    <span class="rounded-md bg-orange-600 p-2 font-extrabold text-white">20% Off</span>
+                    <span class="rounded-md bg-yellow-500 p-2 font-extrabold text-white">Fast</span>
+                </div>
+                <div class="my-4 flex flex-row items-center gap-x-4">
+                    <div class="flex">
+                        <img src="../image/gallery/donuts-hut-logo.png" alt="logo" />
+                    </div>
+                    <div class="flex flex-col">
+                        <h3 class="text-lg font-extrabold">Donuts hut</h3>
+                        <p class="text-lg font-bold text-yellow-500">46</p>
+                    </div>
+                </div>
+                <div class="">
+                    <p class="w-fit rounded-xl bg-green-100 p-2 font-bold text-green-700">Open Now</p>
+                </div>
+            </div>
+
+            <div class="relative">
+                <img src="../image/gallery/ruby-tuesday.png" alt="food-world" class="rounded-2xl" />
+                <div class="absolute top-4 left-4 space-x-2">
+                    <span class="rounded-md bg-orange-600 p-2 font-extrabold text-white">10% Off</span>
+                    <span class="rounded-md bg-yellow-500 p-2 font-extrabold text-white">Fast</span>
+                </div>
+                <div class="my-4 flex flex-row items-center gap-x-4">
+                    <div class="flex">
+                        <img src="../image/gallery/ruby-tuesday-logo.png" alt="logo" />
+                    </div>
+                    <div class="flex flex-col">
+                        <h3 class="text-lg font-extrabold">Ruby tuesday</h3>
+                        <p class="text-lg font-bold text-yellow-500">50</p>
+                    </div>
+                </div>
+                <div class="">
+                    <p class="w-fit rounded-xl bg-green-100 p-2 font-bold text-green-700">Open Now</p>
+                </div>
+            </div>
+
+            <div class="relative">
+                <img src="../image/gallery/kuakata.png" alt="food-world" class="rounded-2xl" />
+                <div class="absolute top-4 left-4 space-x-2">
+                    <span class="rounded-md bg-orange-600 p-2 font-extrabold text-white">10% Off</span>
+                    <span class="rounded-md bg-yellow-500 p-2 font-extrabold text-white">Fast</span>
+                </div>
+                <div class="my-4 flex flex-row items-center gap-x-4">
+                    <div class="flex">
+                        <img src="../image/gallery/kuakata-logo.png" alt="logo" />
+                    </div>
+                    <div class="flex flex-col">
+                        <h3 class="text-lg font-extrabold">Kuakata Fried Chicken</h3>
+                        <p class="text-lg font-bold text-yellow-500">50</p>
+                    </div>
+                </div>
+                <div class="">
+                    <p class="w-fit rounded-xl bg-green-100 p-2 font-bold text-green-700">Opens Tomorrow</p>
+                </div>
+            </div>
+
+            <div class="relative">
+                <img src="../image/gallery/red-square.png" alt="food-world" class="rounded-2xl" />
+                <div class="absolute top-4 left-4 space-x-2">
+                    <span class="rounded-md bg-orange-600 p-2 font-extrabold text-white">10% Off</span>
+                    <span class="rounded-md bg-yellow-500 p-2 font-extrabold text-white">Fast</span>
+                </div>
+                <div class="my-4 flex flex-row items-center gap-x-4">
+                    <div class="flex">
+                        <img src="../image/gallery/red-square-logo.png" alt="logo" />
+                    </div>
+                    <div class="flex flex-col">
+                        <h3 class="text-lg font-extrabold">Kuakata Fried Chicken</h3>
+                        <p class="text-lg font-bold text-yellow-500">50</p>
+                    </div>
+                </div>
+                <div class="">
+                    <p class="w-fit rounded-xl bg-green-100 p-2 font-bold text-green-700">Open Now</p>
+                </div>
+            </div>
+
+            <div class="relative">
+                <img src="../image/gallery/taco-bell.png" alt="food-world" class="rounded-2xl" />
+                <div class="absolute top-4 left-4 space-x-2">
+                    <span class="rounded-md bg-orange-600 p-2 font-extrabold text-white">10% Off</span>
+                    <span class="rounded-md bg-yellow-500 p-2 font-extrabold text-white">Fast</span>
+                </div>
+                <div class="my-4 flex flex-row items-center gap-x-4">
+                    <div class="flex">
+                        <img src="../image/gallery/taco-bell-logo.png" alt="logo" />
+                    </div>
+                    <div class="flex flex-col">
+                        <h3 class="text-lg font-extrabold">Taco bell</h3>
+                        <p class="text-lg font-bold text-yellow-500">50</p>
+                    </div>
+                </div>
+                <div class="">
+                    <p class="w-fit rounded-xl bg-green-100 p-2 font-bold text-green-700">Open Now</p>
+                </div>
+            </div>
+        </div>
+        <div class="mt-16 items-center text-center">
+            <a href="#"
+                class="rounded-full bg-yellow-500 p-4 px-10 text-lg font-bold text-white transition duration-300 hover:bg-yellow-600 hover:underline">View
+                All</a>
+        </div>
+    </section>
+    <!-- search by food section -->
+    <section class="container mx-auto mt-14 bg-yellow-50 py-14">
+        <div class="mb-16 flex items-center justify-center md:justify-between">
+            <div class="">
+                <h2 class="text-5xl font-bold text-orange-500 hover:underline">Search by Food</h2>
+            </div>
+            <div class="hidden md:inline-flex">
+                <a href="#"
+                    class="rounded-full bg-yellow-500 p-4 px-10 text-lg font-bold text-white transition duration-300 hover:bg-yellow-600">View
+                    All</a>
+            </div>
+        </div>
+        <div class="mt-10 grid gap-4 sm:grid-cols-3 lg:grid-cols-6">
+            <div class="flex flex-col items-center justify-center gap-y-4">
+                <img src="../image/gallery/search-pizza.png" alt="pizza" class="h-40 w-40 rounded-full" />
+                <h2 class="text-xl font-medium text-yellow-700 hover:underline">Pizza</h2>
+            </div>
+
+            <div class="flex flex-col items-center justify-center gap-y-4">
+                <img src="../image/gallery/burger.png" alt="burger" class="h-40 w-40 rounded-full" />
+                <h2 class="text-xl font-medium text-yellow-700 hover:underline">Burger</h2>
+            </div>
+
+            <div class="flex flex-col items-center justify-center gap-y-4">
+                <img src="../image/gallery/noodles.png" alt="Noodles" class="h-40 w-40 rounded-full" />
+                <h2 class="text-xl font-medium text-yellow-700 hover:underline">Noodles</h2>
+            </div>
+
+            <div class="flex flex-col items-center justify-center gap-y-4">
+                <img src="../image/gallery/sub-sandwich.png" alt="sub-sandwitches" class="h-40 w-40 rounded-full" />
+                <h2 class="text-xl font-medium text-yellow-700 hover:underline">Sub-sandwitches</h2>
+            </div>
+
+            <div class="flex flex-col items-center justify-center gap-y-4">
+                <img src="../image/gallery/chowmein.png" alt="chowmein" class="h-40 w-40 rounded-full" />
+                <h2 class="text-xl font-medium text-yellow-700 hover:underline">Chowmein</h2>
+            </div>
+
+            <div class="flex flex-col items-center justify-center gap-y-4">
+                <img src="../image/gallery/steak.png" alt="steak" class="h-40 w-40 rounded-full" />
+                <h2 class="text-xl font-medium text-yellow-700 hover:underline">Steak</h2>
+            </div>
+        </div>
+    </section>
+    <!-- cta section -->
+    <section class="container mx-auto py-14 lg:w-1/2">
+        <div
+            class="flex flex-col items-center justify-center divide-y-2 rounded-3xl bg-slate-100 p-14 md:flex-row md:divide-y-0 md:divide-x-2">
+            <div class="flex flex-row items-center justify-center gap-x-4 p-8">
+                <div class="icon">
+                    <img src="../image/icons/discounts.png" alt="discount png" class="h-auto w-fit" />
+                </div>
+                <div class="txt text-left text-2xl font-bold text-orange-500">
+                    Daily <br />
+                    Discount
+                </div>
+            </div>
+            <div class="flex flex-row items-center justify-center gap-x-4 p-8">
+                <div class="icon">
+                    <img src="../image/icons/live-tracking.png" alt="live-tracking png" class="h-auto w-fit" />
+                </div>
+                <div class="txt text-left text-2xl font-bold text-orange-500">
+                    Live <br />
+                    Traking
+                </div>
+            </div>
+            <div class="flex flex-row items-center justify-center gap-x-4 p-8">
+                <div class="icon">
+                    <img src="../image/icons/quick-delivery.png" alt="quick-delivery png" class="h-auto w-fit" />
+                </div>
+                <div class="txt text-left text-2xl font-bold text-orange-500">
+                    Quick <br />
+                    Delivery
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- download section -->
+    <section class="container mx-auto py-14 text-center">
+        <div class="flex flex-col items-center justify-center gap-x-8 gap-y-8 md:flex-row md:gap-y-0">
+            <div class="img w-1/2">
+                <img src="../image/gallery/phone-cta-one.png" alt="downloaad-png" class="h-auto w-full" />
+            </div>
+            <div class="txt w-1/2 space-y-4 text-center lg:text-left">
+                <h2 class="text-4xl font-bold text-yellow-500 lg:text-6xl">Install the app</h2>
+                <p class="text-xs font-normal text-gray-500">Lorem, ipsum dolor sit amet consectetur adipisicing elit.
+                    Natus, porro, aut error, aperiam accusamus nihil doloribus minus repellendus ipsa mollitia
+                    cupiditate
+                    accusantium! Esse.</p>
+                <span
+                    class="flex flex-col items-center justify-center gap-x-6 gap-y-6 md:flex-row md:gap-y-0 lg:justify-start">
+                    <span class="cursor-pointer">
+                        <img src="../image/gallery/app-store.svg" alt="appstore" class="h-auto w-40" />
+                    </span>
+                    <span class="cursor-pointer">
+                        <img src="../image/gallery/google-play.svg" alt="playstore" class="h-auto w-40" />
+                    </span>
+                </span>
+            </div>
+        </div>
+    </section>
+    <!-- cards section -->
+    <section class="container mx-auto py-10">
+        <div class="rounded-xl shadow-xl md:flex">
+            <div class="flex w-full items-center justify-center px-6 py-8 lg:h-[30rem] lg:w-4/12">
+                <div class="max-w-xl">
+                    <h2 class="text-4xl font-semibold text-gray-800 dark:text-white lg:text-5xl">Best deals<span
+                            class="text-yellow-500 dark:text-blue-400">Crispy-Sandwiches</span></h2>
+
+                    <p class="mt-4 text-sm text-gray-500 dark:text-gray-400 lg:text-base">Lorem ipsum dolor sit amet,
+                        consectetur adipisicing elit. Blanditiis commodi cum cupiditate ducimus, fugit harum id
+                        necessitatibus odio quam quasi, quibusdam rem tempora voluptates.</p>
+
+                    <div class="mt-6 flex flex-col space-y-3 lg:flex-row lg:space-y-0">
+                        <a href="#"
+                            class="block transform rounded-md bg-yellow-500 px-3 py-2 text-center text-sm font-semibold text-white transition-colors duration-200 hover:bg-yellow-700">PROCEED
+                            TO ORDER</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="h-64 w-full lg:h-auto lg:w-8/12">
+                <div class="h-full w-full rounded-r-xl bg-cover"
+                    style="background-image: url(../image/gallery/crispy-sandwiches.png)">
+                    <div class="h-full w-full rounded-r-xl bg-black opacity-25"></div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section class="container mx-auto py-10">
+        <div class="rounded-xl shadow-xl md:flex">
+            <div class="h-64 w-full lg:h-auto lg:w-8/12">
+                <div class="h-full w-full rounded-l-xl bg-cover"
+                    style="background-image: url(../image/gallery/fried-chicken.png)">
+                    <div class="h-full w-full rounded-l-xl bg-black opacity-25"></div>
+                </div>
+            </div>
+            <div class="flex w-full items-center justify-center px-6 py-8 lg:h-[30rem] lg:w-4/12">
+                <div class="max-w-xl">
+                    <h2 class="text-4xl font-semibold text-gray-800 dark:text-white lg:text-5xl">
+                        Celebrate parties with
+                        <span class="text-yellow-500 dark:text-yellow-400">Fried Chicken</span>
+                    </h2>
+                    <p class="mt-4 text-sm text-gray-500 dark:text-gray-400 lg:text-base">Lorem ipsum dolor sit amet,
+                        consectetur adipisicing elit. Blanditiis commodi cum cupiditate ducimus, fugit harum id
+                        necessitatibus odio quam quasi, quibusdam rem tempora voluptates.</p>
+                    <div class="mt-6 flex flex-col space-y-3 lg:flex-row lg:space-y-0">
+                        <a href="#"
+                            class="block transform rounded-md bg-yellow-500 px-3 py-2 text-center text-sm font-semibold text-white transition-colors duration-200 hover:bg-yellow-700">PROCEED
+                            TO ORDER</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section class="container mx-auto py-10">
+        <div class="rounded-xl shadow-xl md:flex">
+            <div class="flex w-full items-center justify-center px-6 py-8 lg:h-[30rem] lg:w-4/12">
+                <div class="max-w-xl">
+                    <h2 class="text-4xl font-semibold text-gray-800 dark:text-white lg:text-5xl">Wanna eat hot & <span
+                            class="text-yellow-500 dark:text-yellow-400">spicy Pizza?</span></h2>
+
+                    <p class="mt-4 text-sm text-gray-500 dark:text-gray-400 lg:text-base">Lorem ipsum dolor sit amet,
+                        consectetur adipisicing elit. Blanditiis commodi cum cupiditate ducimus, fugit harum id
+                        necessitatibus odio quam quasi, quibusdam rem tempora voluptates.</p>
+
+                    <div class="mt-6 flex flex-col space-y-3 lg:flex-row lg:space-y-0">
+                        <a href="#"
+                            class="block transform rounded-md bg-yellow-500 px-3 py-2 text-center text-sm font-semibold text-white transition-colors duration-200 hover:bg-yellow-700">PROCEED
+                            TO ORDER</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="h-64 w-full lg:h-auto lg:w-8/12">
+                <div class="h-full w-full rounded-r-xl bg-cover"
+                    style="background-image: url(../image/gallery/pizza.png)">
+                    <div class="h-full w-full rounded-r-xl bg-black opacity-25"></div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- last cta section -->
+    <section class="mx-auto pt-24">
+        <div class="w-full bg-cover bg-center lg:h-[23rem]"
+            style="background-image: url(../image/gallery/cta-two-bg.png);">
+            <div class="flex h-full w-full items-center justify-center">
+                <div class="text-center md:w-1/2">
+                    <h1 class="mt-6 text-4xl font-bold text-white lg:mt-0 lg:text-6xl lg:leading-tight">
+                        Are you ready to <br />
+                        <span class="text-orange-600">Order</span> <br />
+                        with the best deals?
+                    </h1>
+                    <button
+                        class=";lg:mb-0 mt-6 mb-6 w-full transform rounded-md bg-orange-600 px-4 py-2 text-sm font-medium uppercase text-white transition-colors duration-200 hover:bg-orange-500 focus:bg-orange-500 focus:outline-none lg:w-auto">PROCEED
+                        TO ORDER</button>
+                </div>
+            </div>
+        </div>
+        <!-- footer -->
+        <footer class="bg-gray-800 dark:bg-gray-800">
+            <div class="container mx-auto px-6 py-8">
+                <div class="grid gap-8 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
+                    <div>
+                        <div class="text-xs font-medium uppercase text-gray-400">San Francisco</div>
+
+                        <a href="#"
+                            class="mt-5 block text-sm font-medium text-white duration-700 hover:text-gray-400 hover:underline dark:text-gray-300 dark:hover:text-gray-200">
+                            Installation </a>
+                        <a href="#"
+                            class="mt-3 block text-sm font-medium text-white duration-700 hover:text-gray-400 hover:underline dark:text-gray-300 dark:hover:text-gray-200">
+                            Release Notes </a>
+                        <a href="#"
+                            class="mt-3 block text-sm font-medium text-white duration-700 hover:text-gray-400 hover:underline dark:text-gray-300 dark:hover:text-gray-200">
+                            Upgrade Guide </a>
+                        <a href="#"
+                            class="mt-3 block text-sm font-medium text-white duration-700 hover:text-gray-400 hover:underline dark:text-gray-300 dark:hover:text-gray-200">
+                            Using with Preprocessors </a>
+                        <a href="#"
+                            class="mt-3 block text-sm font-medium text-white duration-700 hover:text-gray-400 hover:underline dark:text-gray-300 dark:hover:text-gray-200">
+                            Optimizing for Production </a>
+                        <a href="#"
+                            class="mt-3 block text-sm font-medium text-white duration-700 hover:text-gray-400 hover:underline dark:text-gray-300 dark:hover:text-gray-200">
+                            Browser Support </a>
+                        <a href="#"
+                            class="mt-3 block text-sm font-medium text-white duration-700 hover:text-gray-400 hover:underline dark:text-gray-300 dark:hover:text-gray-200">
+                            IntelliSense </a>
+                    </div>
+
+                    <div>
+                        <div class="text-xs font-medium uppercase text-gray-400">Los Angeles</div>
+
+                        <a href="#"
+                            class="mt-5 block text-sm font-medium text-white duration-700 hover:text-gray-400 hover:underline dark:text-gray-300 dark:hover:text-gray-200">
+                            Installation </a>
+                        <a href="#"
+                            class="mt-3 block text-sm font-medium text-white duration-700 hover:text-gray-400 hover:underline dark:text-gray-300 dark:hover:text-gray-200">
+                            Release Notes </a>
+                        <a href="#"
+                            class="mt-3 block text-sm font-medium text-white duration-700 hover:text-gray-400 hover:underline dark:text-gray-300 dark:hover:text-gray-200">
+                            Upgrade Guide </a>
+                        <a href="#"
+                            class="mt-3 block text-sm font-medium text-white duration-700 hover:text-gray-400 hover:underline dark:text-gray-300 dark:hover:text-gray-200">
+                            Using with Preprocessors </a>
+                        <a href="#"
+                            class="mt-3 block text-sm font-medium text-white duration-700 hover:text-gray-400 hover:underline dark:text-gray-300 dark:hover:text-gray-200">
+                            Optimizing for Production </a>
+                        <a href="#"
+                            class="mt-3 block text-sm font-medium text-white duration-700 hover:text-gray-400 hover:underline dark:text-gray-300 dark:hover:text-gray-200">
+                            Browser Support </a>
+                        <a href="#"
+                            class="mt-3 block text-sm font-medium text-white duration-700 hover:text-gray-400 hover:underline dark:text-gray-300 dark:hover:text-gray-200">
+                            IntelliSense </a>
+                    </div>
+
+                    <div>
+                        <div class="text-xs font-medium uppercase text-gray-400">New York</div>
+
+                        <a href="#"
+                            class="mt-5 block text-sm font-medium text-white duration-700 hover:text-gray-400 hover:underline dark:text-gray-300 dark:hover:text-gray-200">
+                            Installation </a>
+                        <a href="#"
+                            class="mt-3 block text-sm font-medium text-white duration-700 hover:text-gray-400 hover:underline dark:text-gray-300 dark:hover:text-gray-200">
+                            Release Notes </a>
+                        <a href="#"
+                            class="mt-3 block text-sm font-medium text-white duration-700 hover:text-gray-400 hover:underline dark:text-gray-300 dark:hover:text-gray-200">
+                            Upgrade Guide </a>
+                        <a href="#"
+                            class="mt-3 block text-sm font-medium text-white duration-700 hover:text-gray-400 hover:underline dark:text-gray-300 dark:hover:text-gray-200">
+                            Using with Preprocessors </a>
+                        <a href="#"
+                            class="mt-3 block text-sm font-medium text-white duration-700 hover:text-gray-400 hover:underline dark:text-gray-300 dark:hover:text-gray-200">
+                            Optimizing for Production </a>
+                        <a href="#"
+                            class="mt-3 block text-sm font-medium text-white duration-700 hover:text-gray-400 hover:underline dark:text-gray-300 dark:hover:text-gray-200">
+                            Browser Support </a>
+                        <a href="#"
+                            class="mt-3 block text-sm font-medium text-white duration-700 hover:text-gray-400 hover:underline dark:text-gray-300 dark:hover:text-gray-200">
+                            IntelliSense </a>
+                    </div>
+
+                    <div>
+                        <div class="text-xs font-medium uppercase text-gray-400">London</div>
+                        <a href="#"
+                            class="mt-5 block text-sm font-medium text-white duration-700 hover:text-gray-400 hover:underline dark:text-gray-300 dark:hover:text-gray-200">
+                            Installation </a>
+                        <a href="#"
+                            class="mt-3 block text-sm font-medium text-white duration-700 hover:text-gray-400 hover:underline dark:text-gray-300 dark:hover:text-gray-200">
+                            Release Notes </a>
+                        <a href="#"
+                            class="mt-3 block text-sm font-medium text-white duration-700 hover:text-gray-400 hover:underline dark:text-gray-300 dark:hover:text-gray-200">
+                            Upgrade Guide </a>
+                        <a href="#"
+                            class="mt-3 block text-sm font-medium text-white duration-700 hover:text-gray-400 hover:underline dark:text-gray-300 dark:hover:text-gray-200">
+                            Using with Preprocessors </a>
+                        <a href="#"
+                            class="mt-3 block text-sm font-medium text-white duration-700 hover:text-gray-400 hover:underline dark:text-gray-300 dark:hover:text-gray-200">
+                            Optimizing for Production </a>
+                        <a href="#"
+                            class="mt-3 block text-sm font-medium text-white duration-700 hover:text-gray-400 hover:underline dark:text-gray-300 dark:hover:text-gray-200">
+                            Browser Support </a>
+                        <a href="#"
+                            class="mt-3 block text-sm font-medium text-white duration-700 hover:text-gray-400 hover:underline dark:text-gray-300 dark:hover:text-gray-200">
+                            IntelliSense </a>
+                    </div>
+                </div>
+
+                <hr class="my-10 border-gray-500 dark:border-gray-700" />
+                <footer class="footer bg-gray-800 font-medium text-white">
+                    <div>
+                        <span class="footer-title">Services</span>
+                        <a class="link link-hover">Branding</a>
+                        <a class="link link-hover">Design</a>
+                        <a class="link link-hover">Marketing</a>
+                        <a class="link link-hover">Advertisement</a>
+                    </div>
+                    <div>
+                        <span class="footer-title">Company</span>
+                        <a class="link link-hover">About us</a>
+                        <a class="link link-hover">Contact</a>
+                        <a class="link link-hover">Jobs</a>
+                        <a class="link link-hover">Press kit</a>
+                    </div>
+                    <div>
+                        <span class="footer-title">Legal</span>
+                        <a class="link link-hover">Terms of use</a>
+                        <a class="link link-hover">Privacy policy</a>
+                        <a class="link link-hover">Cookie policy</a>
+                    </div>
+                    <div>
+                        <span class="footer-title">Newsletter</span>
+                        <div class="form-control w-80">
+                            <label class="label">
+                                <span class="label-text">Enter your email address</span>
+                            </label>
+                            <div class="relative">
+                                <input type="text" placeholder="username@site.com"
+                                    class="input input-bordered w-full pr-16" />
+                                <button class="btn btn-warning absolute top-0 right-0 rounded-l-none">Subscribe</button>
+                            </div>
+                        </div>
+                    </div>
+                </footer>
+                <hr class="my-10 border-gray-500 dark:border-gray-700" />
+
+                <div class="sm:flex sm:items-center sm:justify-between">
+                    <p class="text-sm text-gray-400">© Copyright 2022. All Rights Reserved.</p>
+
+                    <div class="-mx-2 mt-3 flex sm:mt-0">
+                        <a href="#" class="mx-2 text-gray-400 hover:text-gray-500 dark:hover:text-gray-300"
+                            aria-label="Reddit">
+                            <svg class="h-5 w-5 fill-current" viewBox="0 0 24 24" fill="none"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <path
+                                    d="M12 22C6.47715 22 2 17.5228 2 12C2 6.47715 6.47715 2 12 2C17.5228 2 22 6.47715 22 12C21.9939 17.5203 17.5203 21.9939 12 22ZM6.807 10.543C6.20862 10.5433 5.67102 10.9088 5.45054 11.465C5.23006 12.0213 5.37133 12.6558 5.807 13.066C5.92217 13.1751 6.05463 13.2643 6.199 13.33C6.18644 13.4761 6.18644 13.6229 6.199 13.769C6.199 16.009 8.814 17.831 12.028 17.831C15.242 17.831 17.858 16.009 17.858 13.769C17.8696 13.6229 17.8696 13.4761 17.858 13.33C18.4649 13.0351 18.786 12.3585 18.6305 11.7019C18.475 11.0453 17.8847 10.5844 17.21 10.593H17.157C16.7988 10.6062 16.458 10.7512 16.2 11C15.0625 10.2265 13.7252 9.79927 12.35 9.77L13 6.65L15.138 7.1C15.1931 7.60706 15.621 7.99141 16.131 7.992C16.1674 7.99196 16.2038 7.98995 16.24 7.986C16.7702 7.93278 17.1655 7.47314 17.1389 6.94094C17.1122 6.40873 16.6729 5.991 16.14 5.991C16.1022 5.99191 16.0645 5.99491 16.027 6C15.71 6.03367 15.4281 6.21641 15.268 6.492L12.82 6C12.7983 5.99535 12.7762 5.993 12.754 5.993C12.6094 5.99472 12.4851 6.09583 12.454 6.237L11.706 9.71C10.3138 9.7297 8.95795 10.157 7.806 10.939C7.53601 10.6839 7.17843 10.5422 6.807 10.543ZM12.18 16.524C12.124 16.524 12.067 16.524 12.011 16.524C11.955 16.524 11.898 16.524 11.842 16.524C11.0121 16.5208 10.2054 16.2497 9.542 15.751C9.49626 15.6958 9.47445 15.6246 9.4814 15.5533C9.48834 15.482 9.52348 15.4163 9.579 15.371C9.62737 15.3318 9.68771 15.3102 9.75 15.31C9.81233 15.31 9.87275 15.3315 9.921 15.371C10.4816 15.7818 11.159 16.0022 11.854 16C11.9027 16 11.9513 16 12 16C12.059 16 12.119 16 12.178 16C12.864 16.0011 13.5329 15.7863 14.09 15.386C14.1427 15.3322 14.2147 15.302 14.29 15.302C14.3653 15.302 14.4373 15.3322 14.49 15.386C14.5985 15.4981 14.5962 15.6767 14.485 15.786V15.746C13.8213 16.2481 13.0123 16.5208 12.18 16.523V16.524ZM14.307 14.08H14.291L14.299 14.041C13.8591 14.011 13.4994 13.6789 13.4343 13.2429C13.3691 12.8068 13.6162 12.3842 14.028 12.2269C14.4399 12.0697 14.9058 12.2202 15.1478 12.5887C15.3899 12.9572 15.3429 13.4445 15.035 13.76C14.856 13.9554 14.6059 14.0707 14.341 14.08H14.306H14.307ZM9.67 14C9.11772 14 8.67 13.5523 8.67 13C8.67 12.4477 9.11772 12 9.67 12C10.2223 12 10.67 12.4477 10.67 13C10.67 13.5523 10.2223 14 9.67 14Z">
+                                </path>
+                            </svg>
+                        </a>
+
+                        <a href="#" class="mx-2 text-gray-400 hover:text-gray-500 dark:hover:text-gray-300"
+                            aria-label="Facebook">
+                            <svg class="h-5 w-5 fill-current" viewBox="0 0 24 24" fill="none"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <path
+                                    d="M2.00195 12.002C2.00312 16.9214 5.58036 21.1101 10.439 21.881V14.892H7.90195V12.002H10.442V9.80204C10.3284 8.75958 10.6845 7.72064 11.4136 6.96698C12.1427 6.21332 13.1693 5.82306 14.215 5.90204C14.9655 5.91417 15.7141 5.98101 16.455 6.10205V8.56104H15.191C14.7558 8.50405 14.3183 8.64777 14.0017 8.95171C13.6851 9.25566 13.5237 9.68693 13.563 10.124V12.002H16.334L15.891 14.893H13.563V21.881C18.8174 21.0506 22.502 16.2518 21.9475 10.9611C21.3929 5.67041 16.7932 1.73997 11.4808 2.01722C6.16831 2.29447 2.0028 6.68235 2.00195 12.002Z">
+                                </path>
+                            </svg>
+                        </a>
+
+                        <a href="#" class="mx-2 text-gray-400 hover:text-gray-500 dark:hover:text-gray-300"
+                            aria-label="Github">
+                            <svg class="h-5 w-5 fill-current" viewBox="0 0 24 24" fill="none"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <path
+                                    d="M12.026 2C7.13295 1.99937 2.96183 5.54799 2.17842 10.3779C1.395 15.2079 4.23061 19.893 8.87302 21.439C9.37302 21.529 9.55202 21.222 9.55202 20.958C9.55202 20.721 9.54402 20.093 9.54102 19.258C6.76602 19.858 6.18002 17.92 6.18002 17.92C5.99733 17.317 5.60459 16.7993 5.07302 16.461C4.17302 15.842 5.14202 15.856 5.14202 15.856C5.78269 15.9438 6.34657 16.3235 6.66902 16.884C6.94195 17.3803 7.40177 17.747 7.94632 17.9026C8.49087 18.0583 9.07503 17.99 9.56902 17.713C9.61544 17.207 9.84055 16.7341 10.204 16.379C7.99002 16.128 5.66202 15.272 5.66202 11.449C5.64973 10.4602 6.01691 9.5043 6.68802 8.778C6.38437 7.91731 6.42013 6.97325 6.78802 6.138C6.78802 6.138 7.62502 5.869 9.53002 7.159C11.1639 6.71101 12.8882 6.71101 14.522 7.159C16.428 5.868 17.264 6.138 17.264 6.138C17.6336 6.97286 17.6694 7.91757 17.364 8.778C18.0376 9.50423 18.4045 10.4626 18.388 11.453C18.388 15.286 16.058 16.128 13.836 16.375C14.3153 16.8651 14.5612 17.5373 14.511 18.221C14.511 19.555 14.499 20.631 14.499 20.958C14.499 21.225 14.677 21.535 15.186 21.437C19.8265 19.8884 22.6591 15.203 21.874 10.3743C21.089 5.54565 16.9181 1.99888 12.026 2Z">
+                                </path>
+                            </svg>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </footer>
+    </section>
+    <!-- link js file -->
+    <script src="https://unpkg.com/swiper@8/swiper-bundle.min.js"></script>
+    <script src="../js/main.js"></script>
+</body>
+
+</html>
